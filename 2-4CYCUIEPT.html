@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>創發中心｜活動照片</title>
+	<style type="text/css" media="screen">
+		body {
+  			background-color:#FFFFF4;
+  			height: 100%;
+  			width: 100%;
+  			font-family:微軟正黑體;
+        overflow-x:hidden;
+		}
+	
+		#HEADER1{
+    		margin:0px auto; /* 框架置中 */
+    		width:80%;
+    		height:170px;
+    		background-color: #FFC78E;
+    		text-align:center;
+    		line-height: 100px; /*可達成垂直置中*/
+    		border:  5px solid #FFC78E; /*框架的邊框*/
+    		border-radius:10px 10px 0px 0px ; /*可改圓角*/
+    			
+		}
+		#WRAPPER {
+   			margin:0px auto;/* 框架置中 */
+    		width:79.5%;
+   			padding:10px 10px 10px 10px ;
+    		background-color: #FFEEDD;
+    		overflow:auto;/* 超出邊界使用捲軸 */
+    			
+		}
+		#HEADER2{
+    		margin:auto; /* 框架置中 */
+    		align-items:center;
+    		display:flex;
+    		align-items:center;/*垂直置中*/
+    		justify-content:center;/*水平置中 */
+    		width:95%;
+    		height:100px;
+    		background-color: #FFFAF4;
+    	
+    		
+		}
+    #SIDE {
+        margin:auto;
+        align-items:center;
+        background-color:   #FFDCB9;
+        border:  5px solid   #FFDCB9; /*框架的邊框*/
+        display:flex;
+        align-items:center;/*垂直置中*/
+        justify-content:center;/*水平置中 */
+        height:auto;
+        width:94%;
+       
+    }
+		#CONTENT{
+    		margin:10px auto;
+        align-items:center;
+    		height:auto;
+        width:94%;
+    		background-color: 	#FFE4CA;
+    		border:  5px solid 	#FFE4CA; /*框架的邊框*/
+    		display:flex;
+    		align-items:center;/*垂直置中*/
+    		justify-content:center;/*水平置中 */
+       
+		}
+    #CONTENT .BOX h3 {
+        background-color: #FFBD9D;
+        color: #842B00;
+        width:auto;
+        text-align: center;
+        line-height:30px;
+        letter-spacing:1px;
+    }
+    #CONTENT .BOX {
+        margin:0 auto;
+        color:  #842B00;
+        border:1px dotted #CCCCCC;
+        margin-bottom:10px;
+        line-height:30px;
+      }
+    #CONTENT .BOX a{
+        margin:0 auto;
+        margin-left:25px /*縮排*/
+        color:  #842B00;
+        line-height:30px;
+        margin-bottom:10px;
+      }
+    #A{
+      margin-left:25px;
+      margin-right:25px;
+      text-align: justify;
+      text-justify:inter-ideograph;
+    }
+    #FOOTER {
+      clear:both;
+      height:1%;
+      width:80%;
+      margin:0px auto;
+      height:121px;
+      background-color: #FFCBB3;
+      border: 5px solid   #FFCBB3; /*框架的邊框*/
+      border-radius:0px 0px 10px 10px ;
+      text-align:center;
+      line-height:40px;
+      font-family:monospace;
+      color:#613030;
+    }
+		.button {
+ 			background-color: #FFF0AC;
+ 			margin: 2% 2% 2% 2%;
+ 			border: none;
+ 			color:#842B00;
+			font-weight: bold;
+  		outline: none; /*外圍邊框*/
+  		padding: 1% 4% 1%;
+  		position: relative;
+
+		}
+		
+		.button:before,.button:after {
+  		border: 0 solid transparent; /*transparent透明邊框*/
+  		transition: all 0.25s; /* 轉場時間 */
+  		content: '';
+ 		  height: 24px;
+ 		 position: absolute; /*相對位置*/
+  		width: 24px;
+		}
+		.button:before {
+  		border-top: 2px solid #FFE66F;
+  		left: 0px;
+  		top: -5px;
+		}
+		.button:after {
+  		border-bottom: 2px solid #FFE66F;
+  		bottom: -5px;
+  		right: 0px;
+		}
+		.button:hover {
+		}
+		.button:hover:before,.button:hover:after {
+  		height: 100%;
+  		width: 100%;
+		} /*徘徊移動*/
+
+    .button2 {
+      background-color:   #FFECEC;
+      margin: 1% 1% 1% 1%;
+      border: none;
+      color:#842B00;
+      font-weight: bold;
+      outline: none; /*外圍邊框*/
+      padding: 1% 2% 1%;
+      position: relative;
+      transition: all 0.5s;
+      border: 1px dashed;
+    }
+
+
+    .button2 span{ /*span區域*/
+      z-index: 2; 
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;   
+    }
+    .button2:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      background-color: rgba(0,0,0,0.5);
+      transition: all 0.4s;
+      transform: scale(1, 0.5);
+    }
+    .button2:hover::before{
+    opacity: 0.5;
+    transform: scale(1, 1);
+    }
+    .slide {
+  width: 800px;
+  height: 680px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+}
+.slide > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  animation: slide 25s infinite;
+  opacity: 0;
+}
+.slide > div:nth-child(2) {
+  animation-delay: 5s;
+}
+.slide > div:nth-child(3) {
+  animation-delay: 10s;
+}
+.slide > div:nth-child(4) {
+  animation-delay: 15s;
+}
+.slide > div:nth-child(5) {
+  animation-delay: 20s;
+}
+
+@keyframes slide {
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.1);
+  }
+}
+</head>
+	</style>
+</head>
+<body>
+	<div id="image"></div>
+	<div style="float:right" id="image2"></div>
+	<div id="HEADER1">
+    <img src="https://upload.cc/i1/2019/10/28/ONyEko.png">
+    <img class="we" src="https://upload.cc/i1/2019/10/30/85Fs0w.png" width="150px" height="150px">&emsp;&emsp;
+    <img class="we" src="https://upload.cc/i1/2019/10/30/Gt80zh.png" width="150px" height="150px">
+    <img class="we" src="https://upload.cc/i1/2019/10/30/FK58y6.png" width="150px" height="150px">&emsp;&emsp;
+    <img class="we" src="https://upload.cc/i1/2019/10/30/6LSWhr.png" width="150px" height="150px">
+  </div> <!--抬頭-->
+	<div id="WRAPPER"> <!--內框-->
+  	<div id="HEADER2"> 
+      <tr>
+        <td><a href="default.html" class="button button1" style="text-decoration:none">　首頁　</a></td>
+        <td><a href="CYCUIEC.html" class="button button-2"  style="text-decoration:none"> 創發中心 </a></td>
+        <td><a href="ISIC.html" class="button button3"  style="text-decoration:none">國際學生證</a></td>
+        <td><a href="ABOUTUS.html" class="button button4"  style="text-decoration:none"> 關於我們 </a></td>
+      </tr>
+      <!--按鈕按下去是執行一個動作的就使用 <Button> 標籤，而點擊下去是會跳轉頁面到另一個地方的就使用 <a> 標籤。-->
+    </div><!--上方列-->
+  
+    <div id="SIDE">
+      <tr>
+        <td><a class="button2"href="2-1CYCUIEC.html" style="text-decoration:none">關於創發</a><td>
+        <td><a class="button2"href="2-2CYCUIECMEM.html" style="text-decoration:none">中心成員</a><td>
+        <td><a class="button2"href="2-3CYCUIECACT.html" style="text-decoration:none">活動資訊</a><td>
+        <td><a class="button2"href="2-4CYCUIEPT.html" style="text-decoration:none">活動照片</a><td>
+        <td><a class="button2"href="2-5CYCUIECRES.html" style="text-decoration:none">相關資源</a><td>
+      </tr>
+    
+    </div>
+ 	 	<div id="CONTENT"><!--內容頁-->
+ 	 	
+ 	 		
+ 	  <div class="BOX">
+      <h3>活動照片</h3>
+      <div class="slide">
+                            <div style="background-image:url(https://scontent.ftpe7-4.fna.fbcdn.net/v/t1.0-0/c33.0.200.200a/p200x200/72085431_2840449989322578_148233640805924864_n.jpg?_nc_cat=107&_nc_oc=AQldz70XmPZFlGbl6ZpBly0azU8tImZfINFxd5p_PzPya_-Oo8MY_TrRXAV4NdEOwZ8hd1l9NshcWoUEAsrbIMyq&_nc_ht=scontent.ftpe7-4.fna&oh=a5de82e30a507d37071414da217a4e43&oe=5E1FBEAC)"></div>
+                            <div style="background-image:url(https://scontent.ftpe7-2.fna.fbcdn.net/v/t1.0-0/c51.0.200.200a/p200x200/67566909_2698197800214465_6286847547336032256_n.jpg?_nc_cat=111&_nc_oc=AQlIoW8JgBcIrbdAimbMTAaSAowwTDVCqwyJ0kxJtUvKX3i3cs11BpHhpmIXeJN4LaU3KoWlDy0-ISq5xW_nhi8w&_nc_ht=scontent.ftpe7-2.fna&oh=33e1e04466f319959b7a9ed33d6392d9&oe=5E4E5267)"></div>
+                            <div style="background-image:url(https://scontent.ftpe7-1.fna.fbcdn.net/v/t1.0-0/c61.0.200.200a/p200x200/67714366_2694376397263272_7704833727414665216_n.jpg?_nc_cat=110&_nc_oc=AQmCJSg3G3QQ5Mwa3fHboTTgGAZsKBPy-IQPG-S_rU3UbftoQmtO33USSyI17qgsoWh7w0qam3M7IM3Fa94lC54D&_nc_ht=scontent.ftpe7-1.fna&oh=bac3ea2b0371a824ea71322e344a90bc&oe=5E178523)"></div>
+                            <div style="background-image:url(https://scontent.ftpe7-2.fna.fbcdn.net/v/t1.0-0/c33.0.200.200a/p200x200/13138976_1190918054275788_640595719554431678_n.jpg?_nc_cat=104&_nc_oc=AQkXUcayZulSwsvXfu-9A5P0_GyiJLr3gqe3G1Ix2GyUIy5JmrA7FHk0DiY7WVm6tIahp-lCpoBXHOMdwVtx1845&_nc_ht=scontent.ftpe7-2.fna&oh=f316ce020f193d4ac723ddc844b386b2&oe=5E62A37F)"></div>
+                            <div style="background-image:url(https://scontent.ftpe7-4.fna.fbcdn.net/v/t1.0-0/c51.0.200.200a/p200x200/12509860_1115809498453311_3103205764939716812_n.jpg?_nc_cat=105&_nc_oc=AQllOFmF55WxMvDsCyBxgcxqv6DfH-9nVN8z70rdDxPUPTuwAD4lClUF3TKgbh3wfUx9MYCYtEZKQ-qUM2yBIvYG&_nc_ht=scontent.ftpe7-4.fna&oh=923bf197539f3cac0dd4b477dfba5b1e&oe=5E4C090E)"></div>
+                        </div>
+    </div>
+    </div>
+ 	 	
+ 	  	</div>
+    </div>
+	</div>
+   <div id="FOOTER"><b><font size="5px">Chung Yuan Christian University</font></b><br>Innovation center&International Student Identity Card<br>Copyright © 2019 Yisin Yuhsin Zhongjun Yuyang</p> </div><!--末端-->
+</body>
+</html>

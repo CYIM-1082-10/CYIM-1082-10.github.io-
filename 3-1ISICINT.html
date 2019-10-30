@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>期中網頁設計</title>
+	<style type="text/css" media="screen">
+		body {
+  			background-color:#FFFFF4;
+  			height: 100%;
+  			width: 100%;
+  			font-family:微軟正黑體;
+        overflow-x:hidden;
+		}
+    #CONTENT .a{position: relative;
+      left:150px;
+      }
+    #CONTENT .b{position: relative;
+      left:250px;
+      }
+	
+		#HEADER1{
+    		margin:0px auto; /* 框架置中 */
+    		width:80%;
+    		height:170px;
+    		background-color: #FFC78E;
+    		text-align:center;
+    		line-height: 100px; /*可達成垂直置中*/
+    		border:  5px solid #FFC78E; /*框架的邊框*/
+    		border-radius:10px 10px 0px 0px ; /*可改圓角*/
+    			
+		}
+		#WRAPPER {
+   			margin:0px auto;/* 框架置中 */
+    		width:79.5%;
+   			padding:10px 10px 10px 10px ;
+    		background-color: #FFEEDD;
+    		overflow:auto;/* 超出邊界使用捲軸 */
+    			
+		}
+		#HEADER2{
+    		margin:auto; /* 框架置中 */
+    		align-items:center;
+    		display:flex;
+    		align-items:center;/*垂直置中*/
+    		justify-content:center;/*水平置中 */
+    		width:95%;
+    		height:100px;
+    		background-color: #FFFAF4;
+    	
+    		
+		}
+    #SIDE {
+        margin:auto;
+        align-items:center;
+        background-color:   #FFDCB9;
+        border:  5px solid   #FFDCB9; /*框架的邊框*/
+        display:flex;
+        align-items:center;/*垂直置中*/
+        justify-content:center;/*水平置中 */
+        height:auto;
+        width:94%;
+       
+    }
+		#CONTENT{
+    		margin:10px auto;
+        align-items:center;
+    		height:auto;
+        width:94%;
+    		background-color: 	#FFE4CA;
+    		border:  5px solid 	#FFE4CA; /*框架的邊框*/
+    		display:flex;
+    		align-items:center;/*垂直置中*/
+    		justify-content:center;/*水平置中 */
+       
+		}
+    #CONTENT .BOX h3 {
+        background-color: #FFBD9D;
+        color: #842B00;
+        width:auto;
+        text-align: center;
+        line-height:30px;
+        letter-spacing:1px;
+    }
+    #CONTENT .BOX {
+        margin:0 auto;
+        color:  #842B00;
+        border:1px dotted #CCCCCC;
+        margin-bottom:10px;
+        line-height:30px;
+      }
+    #CONTENT .BOX a{
+        margin:0 auto;
+        margin-left:25px /*縮排*/
+        color:  #842B00;
+        line-height:30px;
+        margin-bottom:10px;
+      }
+    #A{
+      margin-left:25px;
+      margin-right:25px;
+      text-align: justify;
+      text-justify:inter-ideograph;
+    }
+    #FOOTER {
+      clear:both;
+      height:1%;
+      width:80%;
+      margin:0px auto;
+      height:121px;
+      background-color: #FFCBB3;
+      border: 5px solid   #FFCBB3; /*框架的邊框*/
+      border-radius:0px 0px 10px 10px ;
+      text-align:center;
+      line-height:40px;
+      font-family:monospace;
+      color:#613030;
+    }
+		.button {
+ 			background-color: #FFF0AC;
+ 			margin: 2% 2% 2% 2%;
+ 			border: none;
+ 			color:#842B00;
+			font-weight: bold;
+  		outline: none; /*外圍邊框*/
+  		padding: 1% 4% 1%;
+  		position: relative;
+
+		}
+		
+		.button:before,.button:after {
+  		border: 0 solid transparent; /*transparent透明邊框*/
+  		transition: all 0.25s; /* 轉場時間 */
+  		content: '';
+ 		  height: 24px;
+ 		 position: absolute; /*相對位置*/
+  		width: 24px;
+		}
+		.button:before {
+  		border-top: 2px solid #FFE66F;
+  		left: 0px;
+  		top: -5px;
+		}
+		.button:after {
+  		border-bottom: 2px solid #FFE66F;
+  		bottom: -5px;
+  		right: 0px;
+		}
+		.button:hover {
+		}
+		.button:hover:before,.button:hover:after {
+  		height: 100%;
+  		width: 100%;
+		} /*徘徊移動*/
+
+    .button2 {
+      background-color:   #FFECEC;
+      margin: 1% 1% 1% 1%;
+      border: none;
+      color:#842B00;
+      font-weight: bold;
+      outline: none; /*外圍邊框*/
+      padding: 1% 2% 1%;
+      position: relative;
+      transition: all 0.5s;
+      border: 1px dashed;
+    }
+
+
+    .button2 span{ /*span區域*/
+      z-index: 2; 
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;   
+    }
+    .button2:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      background-color: rgba(0,0,0,0.5);
+      transition: all 0.4s;
+      transform: scale(1, 0.5);
+    }
+    .button2:hover::before{
+    opacity: 0.5;
+    transform: scale(1, 1);
+    }
+</head>
+	</style>
+</head>
+<body>
+	<div id="image"></div>
+	<div style="float:right" id="image2"></div>
+	<div id="HEADER1">
+    <img src="https://upload.cc/i1/2019/10/28/ONyEko.png">
+    <img class="we" src="https://upload.cc/i1/2019/10/30/85Fs0w.png" width="150px" height="150px">&emsp;&emsp;
+    <img class="we" src="https://upload.cc/i1/2019/10/30/Gt80zh.png" width="150px" height="150px">
+    <img class="we" src="https://upload.cc/i1/2019/10/30/FK58y6.png" width="150px" height="150px">&emsp;&emsp;
+    <img class="we" src="https://upload.cc/i1/2019/10/30/6LSWhr.png" width="150px" height="150px">
+  </div> <!--抬頭-->
+  
+	<div id="WRAPPER"> <!--內框-->
+  	<div id="HEADER2"> 
+      <tr>
+        <td><a href="default.html" class="button button1" style="text-decoration:none">　首頁　</a></td>
+        <td><a href="CYCUIEC.html" class="button button-2"  style="text-decoration:none"> 創發中心 </a></td>
+        <td><a href="ISIC.html" class="button button3"  style="text-decoration:none">國際學生證</a></td>
+        <td><a href="ABOUTUS.html" class="button button4"  style="text-decoration:none"> 關於我們 </a></td>
+      </tr>
+      <!--按鈕按下去是執行一個動作的就使用 <Button> 標籤，而點擊下去是會跳轉頁面到另一個地方的就使用 <a> 標籤。-->
+    </div><!--上方列-->
+  
+    <div id="SIDE">
+      <tr>
+        <td><a class="button2"href="3-1ISICINT.html" style="text-decoration:none">ISIC學生證介紹</a><td>
+        <td><a class="button2"href="3-2ISICOFFER.html" style="text-decoration:none">ISIC學生證優惠</a><td>
+      </tr>
+    </div>
+ 	 	<div id="CONTENT"><!--內容頁-->
+ 	 	
+ 	 		
+ 	  <div class="BOX">
+      <h3>國際學生證介紹</h3>
+      <div id="A">
+      <a><b>【介紹】</b></a><br>
+      <a>
+       <blockquote>國際學生旅遊聯盟(ISTC)成立於1949，聯盟最初是由歐洲大學學生組成，專門為學生提供能力範圍以內的旅遊協助。至今，ISTC轄下已有5,000多個專為學生旅遊而服務的辦事處分佈全球130個國家，他們共同為實現聯盟的宗旨而努力。聯盟專門為學生提供機票、保險、交通、文化交流和簽發國際認可的學生證等服務。推廣ISIC國際學生證最主要的目的，是希望各國青年學生能透過一張國際學生證件，不分國家、種族、性別、宗教，都能走出國門、行遍天下，認識不同國家的文化並學習尊重不同文化，降低因文化差異所可能引起的衝突，進而促進世界和平！</blockquote>
+      </a>
+      <p>
+      <a><b>【折扣與優惠】</b></a><br>
+      <a>
+       <blockquote>國際學生證在台灣或是國外皆是您享受極大的優惠的通行證。<br>
+      是為國際唯一認可的學生證，超過50年的歷史，讓國際學生證持卡者成為實至名歸的全球會員俱樂部。<br>
+      每一年來自全球125個國家，超過5百萬的學生都在使用國際學生證帶來的優惠。</p></blockquote>
+      
+      <p>
+      <a><b>【申辦國際學生證】</b></a>
+      <ul>
+      <li>年滿12歲且中華民國教育部網站上所公佈公私立國民中學、公私立高級中學、公私立高級職校、公私立大專院校之正式學籍的在校學生，並出示具有效力的學校學生證即可辦理。(正式學籍係指經正式入學管道，入學修讀授予學位或頒發畢業證書之課程者)</li>
+      <li>若您已經畢業但未滿31歲，可以申請國際青年證。</li>
+      <li>若您是全職教師(每周授課達18個小時，授課至少達一個學期)，則可申請國際教師證。</li>
+      <li>相關資訊請參考後方連結:<a href="https://www.isic.com.tw/jsp/tw/home/ch/apply-for-card.jsp" target="_blank" title="卡證申請">卡證申請</a></li>
+      </ul>
+      <p id="a">
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;國際學生證 (ISIC)
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;永豐國際學生證Debit卡 (ISIC Debit Card)</p>
+      <img src="2.jpg" width="280" height="150" class="a">
+  
+      <img src="1.png" width="280" height="150" class="b">
+      
+      </<div>
+        <!--      <h3></h3>
+      <div id="A">
+      <h1>介紹</h1>
+      <blockquote><p>國際學生旅遊聯盟(ISTC)成立於1949，聯盟最初是由歐洲大學學生組成，專門為學生提供能力範圍以內的旅遊協助。至今，ISTC轄下已有5,000多個專為學生旅遊而服務的辦事處分佈全球130個國家，他們共同為實現聯盟的宗旨而努力。聯盟專門為學生提供機票、保險、交通、文化交流和簽發國際認可的學生證等服務。推廣ISIC國際學生證最主要的目的，是希望各國青年學生能透過一張國際學生證件，不分國家、種族、性別、宗教，都能走出國門、行遍天下，認識不同國家的文化並學習尊重不同文化，降低因文化差異所可能引起的衝突，進而促進世界和平！</p></blockquote>
+      <h1>折扣與優惠</h1>
+      <blockquote><p>國際學生證在台灣或是國外皆是您享受極大的優惠的通行證。國際學生證(ISIC)為國際唯一認可的學生證，超過50年的歷史，讓國際學生證持卡者成為實至名歸的全球會員俱樂部。每一年來自全球125個國家，超過5百萬的學生都在使用國際學生證帶來的優惠。</p></blockquote>
+      <h1>申辦國際學生證</h1>
+      <ul>
+      <li>年滿12歲且中華民國教育部網站上所公佈公私立國民中學、公私立高級中學、公私立高級職校、公私立大專院校之正式學籍的在校學生，並出示具有效力的學校學生證即可辦理。(正式學籍係指經正式入學管道，入學修讀授予學位或頒發畢業證書之課程者)</li>
+      <li>若您已經畢業但未滿31歲，可以申請國際青年證。</li>
+      <li>若您是全職教師(每周授課達18個小時，授課至少達一個學期)，則可申請國際教師證。</li>
+      <li>相關資訊請參考後方連結:<a href="https://www.isic.com.tw/jsp/tw/home/ch/apply-for-card.jsp" target="_blank" title="卡證申請">卡證申請</a></li>
+      </ul>
+      <p class="a">國際學生證 (ISIC)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;永豐國際學生證Debit卡 (ISIC Debit Card)</p>
+      <img src="2.jpg" width="280" height="150" class="a">
+  
+      <img src="1.png" width="280" height="150" class="b">-->
+      
+    </div>
+    </div>
+ 	 	
+ 	  	</div>
+    </div>
+	</div>
+   <div id="FOOTER"><b><font size="5px">Chung Yuan Christian University</font></b><br>Innovation center&International Student Identity Card<br>Copyright © 2019 Yisin Yuhsin Zhongjun Yuyang</p> </div><!--末端-->
+</body>
+</html>
